@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1769e0"><title>حنكك | HANKAK</title>
+<style>
+:root{--blue:#1769e0;--blue2:#e7f0ff;--bg:#f0f2f5;--card:#fff;--ink:#1c1e21;--muted:#65676b;--line:#e4e6eb;--green:#31a24c;--shadow:0 1px 2px #00000012}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Tahoma,sans-serif}button,input,textarea{font:inherit}button{border:0;cursor:pointer;font-weight:700;border-radius:9px;padding:10px 13px}button:disabled{opacity:.55;cursor:wait}
+.topbar{height:64px;background:#fff;position:sticky;top:0;z-index:20;box-shadow:0 1px 3px #0002;display:grid;grid-template-columns:1fr minmax(240px,560px) 1fr;align-items:center;padding:0 22px;gap:18px}
+.brand{display:flex;align-items:center;gap:9px;color:var(--blue);font-size:24px;font-weight:900;white-space:nowrap}.logo{width:42px;height:42px;background:linear-gradient(145deg,#3288ff,#1455c0);color:white;border-radius:13px;display:grid;place-items:center;font-size:29px;box-shadow:0 3px 8px #1769e033}
+.search{background:#f0f2f5;border-radius:25px;padding:0 15px;display:flex;align-items:center;gap:8px}.search input{border:0;outline:0;background:transparent;padding:12px 0;width:100%}
+.top-actions{display:flex;justify-content:flex-end;align-items:center;gap:8px}.iconbtn{background:#f0f2f5;color:#333;border-radius:50%;width:42px;height:42px;font-size:18px;padding:0}.userchip{display:flex;align-items:center;gap:8px;font-weight:700}
+.layout{max-width:1440px;margin:20px auto;padding:0 18px;display:grid;grid-template-columns:260px minmax(420px,680px) 260px;gap:22px;align-items:start}
+.panel{position:sticky;top:84px}.sidecard,.card{background:var(--card);border-radius:13px;box-shadow:var(--shadow);margin-bottom:15px}.sidecard{padding:15px}.side-title{font-size:15px;color:var(--muted);margin:3px 0 13px;font-weight:800}
+.side-link{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;font-weight:700;color:#30343b}.side-link:hover{background:#f0f2f5}.side-ico{width:34px;height:34px;border-radius:10px;background:var(--blue2);color:var(--blue);display:grid;place-items:center;font-size:17px}
+.profile-mini{display:flex;align-items:center;gap:10px;padding:8px 4px 14px;border-bottom:1px solid var(--line);margin-bottom:9px}.avatar{width:42px;height:42px;flex:none;border-radius:50%;background:linear-gradient(145deg,#dceaff,#a9cbff);color:#1557b0;display:grid;place-items:center;font-weight:900;font-size:18px;overflow:hidden}.avatar.big{width:48px;height:48px}.muted{color:var(--muted);font-size:13px}.center{min-width:0}
+.card{padding:15px}.stories{display:flex;gap:11px;overflow-x:auto;padding:3px 2px 9px}.story{min-width:105px;height:165px;border-radius:13px;position:relative;overflow:hidden;background:linear-gradient(155deg,#7eb6ff,#2458a9);color:#fff;display:flex;align-items:flex-end;padding:11px;font-weight:800;box-shadow:var(--shadow)}.story:nth-child(2){background:linear-gradient(155deg,#f6b36e,#b8494b)}.story:nth-child(3){background:linear-gradient(155deg,#8b83dc,#3c397f)}.story:nth-child(4){background:linear-gradient(155deg,#73c7b0,#176a5b)}.story .plus{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center;font-size:23px}.story small{display:block;font-size:11px;font-weight:500}.composer-head{display:flex;align-items:center;gap:10px}.composer-head input{flex:1;border:0;outline:0;background:#f0f2f5;border-radius:25px;padding:13px 16px;min-width:0}.composer-actions{display:flex;gap:8px;border-top:1px solid var(--line);padding-top:12px;margin-top:13px}.composer-actions button{flex:1;background:transparent;color:var(--muted)}.composer-actions button:hover{background:#f0f2f5}.publish{background:var(--blue)!important;color:white!important}
+.post{padding:16px}.posthead{display:flex;align-items:center;gap:10px}.postmeta{flex:1;min-width:0}.postname{font-weight:800}.posttime{font-size:12px;color:var(--muted);margin-top:4px}.more{background:transparent;color:var(--muted);font-size:20px;padding:5px}.posttext{white-space:pre-wrap;line-height:1.85;margin:16px 0;overflow-wrap:anywhere;font-size:15px}.poststats{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;padding:8px 1px;border-bottom:1px solid var(--line)}.postbuttons{display:flex;gap:5px;padding-top:8px}.postbuttons button{flex:1;background:transparent;color:var(--muted);font-size:14px}.postbuttons button:hover{background:#f0f2f5}.postbuttons .liked{color:var(--blue)}
+.commentlist{margin-top:8px}.comment{background:#f0f2f5;border-radius:13px;padding:9px 12px;margin:7px 0;max-width:95%}.comment strong{font-size:13px}.comment p{margin:5px 0;white-space:pre-wrap;line-height:1.5}.commentform{display:flex;gap:7px;margin-top:10px}.commentform input{flex:1;min-width:0;background:#f0f2f5;border:0;border-radius:22px;padding:11px 14px;outline-color:var(--blue)}.commentform button{background:var(--blue);color:white}
+.friendrow{display:flex;align-items:center;gap:9px;padding:9px 0;border-bottom:1px solid var(--line)}.friendrow:last-child{border:0}.friendrow .details{flex:1;min-width:0}.friendrow strong{font-size:13px}.friendrow button{padding:8px 10px;font-size:12px}.primary{background:var(--blue);color:#fff}.soft{background:var(--blue2);color:var(--blue)}.empty{text-align:center;padding:25px;color:var(--muted);font-size:14px}
+.authwrap{max-width:440px;margin:65px auto;padding:0 15px}.authcard{background:#fff;border-radius:18px;padding:26px;box-shadow:0 8px 28px #00000012}.authbrand{text-align:center;color:var(--blue);font-size:32px;font-weight:900;margin-bottom:5px}.authcard h2{text-align:center;margin:8px 0}.authcard p{text-align:center;color:var(--muted);font-size:14px}.field{width:100%;border:1px solid var(--line);border-radius:10px;padding:13px;margin:6px 0;outline-color:var(--blue)}.authcard button{width:100%;margin-top:9px}.hidden{display:none!important}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#202124;color:white;padding:12px 18px;border-radius:12px;z-index:50;display:none;max-width:92%;box-shadow:0 4px 16px #0003}
+.footer-note{font-size:12px;color:var(--muted);line-height:1.7}.sectionhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.sectionhead h3{margin:0;font-size:16px}
+@media(max-width:1100px){.layout{grid-template-columns:220px minmax(380px,680px);justify-content:center}.right{display:none}}
+@media(max-width:760px){.topbar{height:58px;padding:0 11px;grid-template-columns:auto 1fr auto;gap:8px}.brand{font-size:20px}.logo{width:36px;height:36px;font-size:24px}.search{max-width:100%}.top-actions .userchip{display:none}.layout{display:block;margin:12px auto;padding:0 9px}.left{display:none}.card{border-radius:12px;margin-bottom:11px}.stories{gap:8px}.story{min-width:92px;height:145px}.post{padding:13px}.composer-actions button{font-size:12px;padding:9px 4px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">H</span><span>حنكك</span></div>
+  <label class="search"><span>⌕</span><input id="userSearch" placeholder="ابحث عن صديق بالبريد الإلكتروني..." aria-label="البحث عن مستخدم"></label>
+  <div class="top-actions"><div class="userchip"><div class="avatar" id="topAvatar">H</div><span id="topName">حنكك</span></div><button class="iconbtn" title="الرئيسية">⌂</button><button class="iconbtn" id="logoutBtn" title="تسجيل الخروج">⇥</button></div>
+</header>
+
+<section id="authView" class="authwrap">
+  <div class="authcard"><div class="authbrand">H حنكك</div><h2>أهلاً بك في مجتمع حنكك</h2><p>تواصل وشارك لحظاتك مع الناس القريبين منك</p>
+    <input id="nameInput" class="field" placeholder="الاسم الظاهر" autocomplete="name">
+    <input id="emailInput" class="field" type="email" placeholder="البريد الإلكتروني" autocomplete="email">
+    <input id="passwordInput" class="field" type="password" placeholder="كلمة المرور" autocomplete="current-password">
+    <button id="loginBtn" class="primary">تسجيل الدخول</button><button id="signupBtn" class="soft">إنشاء حساب جديد</button>
+  </div>
+</section>
+
+<main id="appView" class="layout hidden">
+  <aside class="panel left">
+    <div class="sidecard">
+      <div class="profile-mini"><div class="avatar big" id="sideAvatar">H</div><div><strong id="sideName">حسابي</strong><div class="muted">ملفك الشخصي</div></div></div>
+      <div class="side-link"><span class="side-ico">⌂</span> آخر المنشورات</div>
+      <div class="side-link"><span class="side-ico">♧</span> الأصدقاء</div>
+      <div class="side-link"><span class="side-ico">♧</span> طلبات الصداقة <span id="leftRequestCount" class="muted"></span></div>
+      <div class="side-link"><span class="side-ico">🔔</span> الإشعارات</div>
+    </div>
+    <div class="sidecard"><div class="side-title">اختصارات حنكك</div><div class="footer-note">شارك أفكارك، تفاعل مع المنشورات، وابنِ مجتمعك. نعمل حالياً على تطوير المزيد من الخصائص.</div></div>
+  </aside>
+
+  <section class="center">
+    <div class="card">
+      <div class="sectionhead"><h3>القصص</h3><span class="muted">لحظات من مجتمعك</span></div>
+      <div class="stories">
+        <div class="story"><span class="plus">+</span><span>أضف قصتك<small>قريباً</small></span></div>
+        <div class="story">مساحة الأصدقاء</div><div class="story">يوميات حنكك</div><div class="story">لحظات جميلة</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="composer-head"><div class="avatar" id="composerAvatar">H</div><input id="postInput" placeholder="شنو الجديد؟ شارك منشوراً..."></div>
+      <div class="composer-actions"><button type="button">📷 صورة <span class="muted">قريباً</span></button><button type="button">🎥 فيديو <span class="muted">قريباً</span></button><button id="publishBtn" class="publish">نشر المنشور</button></div>
+    </div>
+    <div id="feed"><div class="card empty">جاري تحميل المنشورات...</div></div>
+  </section>
+
+  <aside class="panel right">
+    <div class="sidecard"><div class="sectionhead"><h3>طلبات الصداقة</h3><span id="requestCount" class="muted"></span></div><div id="requestsList" class="muted">جاري التحميل...</div></div>
+    <div class="sidecard"><div class="sectionhead"><h3>اقتراحات للبحث</h3></div><p class="footer-note">اكتب البريد الإلكتروني لصديقك في مربع البحث بالأعلى للعثور على حسابه وإرسال طلب صداقة.</p></div>
+  </aside>
+</main>
+<div id="toast" class="toast"></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+const firebaseConfig={apiKey:"AIzaSyCPSP_TWoITglGZBPPlogITrIxPiWDUOO0",authDomain:"hankapp-2892d.firebaseapp.com",databaseURL:"https://hankapp-2892d-default-rtdb.europe-west1.firebasedatabase.app",projectId:"hankapp-2892d",storageBucket:"hankapp-2892d.firebasestorage.app",messagingSenderId:"755481660216",appId:"1:755481660216:web:e5ab48240ed5221ba9cfcd"};
+firebase.initializeApp(firebaseConfig);const auth=firebase.auth(),db=firebase.firestore();
+const $=id=>document.getElementById(id);let me=null,profile=null,feedUnsub=null,reqUnsub=null,likeUnsubs=[];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const nameOf=()=>profile?.name||me?.email?.split('@')[0]||'مستخدم حنكك';
+const initial=s=>(s||'H').trim().charAt(0).toUpperCase()||'H';
+function toast(t){$('toast').textContent=t;$('toast').style.display='block';clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('toast').style.display='none',3300)}
+function setProfileUI(){let n=nameOf();['topName','sideName'].forEach(id=>$(id).textContent=n);['topAvatar','sideAvatar','composerAvatar'].forEach(id=>$(id).textContent=initial(n))}
+async function ensureProfile(user,name){let r=db.collection('users').doc(user.uid),s=await r.get();if(!s.exists)await r.set({uid:user.uid,name:name||user.email.split('@')[0],email:user.email,createdAt:firebase.firestore.FieldValue.serverTimestamp()});s=await r.get();profile=s.data()}
+function stopListeners(){if(feedUnsub)feedUnsub();if(reqUnsub)reqUnsub();likeUnsubs.forEach(u=>u());likeUnsubs=[]}
+auth.onAuthStateChanged(async user=>{stopListeners();if(!user){me=null;profile=null;$('authView').classList.remove('hidden');$('appView').classList.add('hidden');return}me=user;try{await ensureProfile(user);$('authView').classList.add('hidden');$('appView').classList.remove('hidden');setProfileUI();listenFeed();listenRequests()}catch(e){toast('تعذر تحميل الحساب: '+e.message)}});
+$('loginBtn').onclick=async()=>{try{await auth.signInWithEmailAndPassword($('emailInput').value.trim(),$('passwordInput').value)}catch(e){toast('تعذر تسجيل الدخول: '+e.message)}};
+$('signupBtn').onclick=async()=>{let n=$('nameInput').value.trim(),email=$('emailInput').value.trim(),pass=$('passwordInput').value;if(!n)return toast('اكتب الاسم الظاهر');try{let c=await auth.createUserWithEmailAndPassword(email,pass);await ensureProfile(c.user,n);toast('تم إنشاء الحساب')}catch(e){toast('تعذر إنشاء الحساب: '+e.message)}};
+$('logoutBtn').onclick=()=>auth.signOut();
+$('publishBtn').onclick=async()=>{let text=$('postInput').value.trim();if(!text)return toast('اكتب شيئاً قبل النشر');if(!me)return toast('سجّل الدخول أولاً');const btn=$('publishBtn');btn.disabled=true;btn.textContent='جارٍ النشر...';try{const postRef=db.collection('posts').doc();await postRef.set({uid:me.uid,authorName:nameOf(),text:text,createdAt:firebase.firestore.FieldValue.serverTimestamp()});const saved=await postRef.get();if(!saved.exists)throw new Error('لم يؤكد Firebase حفظ المنشور. تحقق من مشروع Firebase وقاعدة Firestore المستخدمة.');$('postInput').value='';toast('تم حفظ المنشور بنجاح');}catch(e){console.error('HANKAK publish error:',e);let msg=e&&e.message?e.message:String(e);if(e&&e.code==='permission-denied')msg='رفضت قواعد Firestore الحفظ (صلاحيات غير كافية).';else if(e&&e.code==='unavailable')msg='تعذر الاتصال بـ Firebase. تحقق من الإنترنت.';toast('فشل حفظ المنشور: '+msg);}finally{btn.disabled=false;btn.textContent='نشر المنشور';}};
+function listenFeed(){feedUnsub=db.collection('posts').limit(100).onSnapshot(s=>{let f=$('feed');likeUnsubs.forEach(u=>u());likeUnsubs=[];if(s.empty){f.innerHTML='<div class="card empty">لا توجد منشورات حتى الآن. ابدأ أول منشور في حنكك!</div>';return}const docs=s.docs.slice().sort((a,b)=>{const av=a.data().createdAt?.toMillis?.()||0,bv=b.data().createdAt?.toMillis?.()||0;return bv-av});f.innerHTML='';docs.forEach(d=>f.appendChild(postCard(d)))},e=>{console.error('HANKAK feed error:',e);$('feed').innerHTML='<div class="card empty">تعذر تحميل المنشورات: '+esc(e.message)+'</div>'})}
+function postCard(doc){let p=doc.data(),id=doc.id,n=p.authorName||'مستخدم حنكك',el=document.createElement('article');el.className='card post';el.innerHTML=`<div class="posthead"><div class="avatar">${esc(initial(n))}</div><div class="postmeta"><div class="postname">${esc(n)}</div><div class="posttime">منشور على حنكك · 🌐</div></div><button class="more" title="المزيد">•••</button></div><div class="posttext">${esc(p.text)}</div><div class="poststats"><span id="lc-${id}">0 إعجاب</span><span id="cc-${id}">0 تعليق</span></div><div class="postbuttons"><button id="like-${id}">👍 إعجاب</button><button id="focus-${id}">💬 تعليق</button><button disabled title="قريباً">↗ مشاركة</button></div><div class="commentlist" id="comments-${id}"></div><div class="commentform"><input id="ci-${id}" placeholder="اكتب تعليقاً..."><button id="cs-${id}">إرسال</button></div>`;
+let likes=db.collection('posts').doc(id).collection('likes');let unsub=likes.onSnapshot(s=>{let b=$('like-'+id);if(!b)return;$('lc-'+id).textContent=s.size+' إعجاب';let liked=s.docs.some(x=>x.id===me.uid);b.classList.toggle('liked',liked);b.textContent=liked?'👍 أعجبك':'👍 إعجاب'});likeUnsubs.push(unsub);
+$('like-'+id).onclick=async()=>{let r=likes.doc(me.uid);try{let s=await r.get();if(s.exists)await r.delete();else await r.set({uid:me.uid,createdAt:firebase.firestore.FieldValue.serverTimestamp()})}catch(e){toast('تعذر تسجيل الإعجاب: '+e.message)}};
+$('focus-'+id).onclick=()=>$('ci-'+id).focus();
+let comments=db.collection('posts').doc(id).collection('comments');comments.orderBy('createdAt','asc').limit(40).onSnapshot(s=>{let box=$('comments-'+id);if(!box)return;$('cc-'+id).textContent=s.size+' تعليق';box.innerHTML=s.docs.map(x=>{let c=x.data();return `<div class="comment"><strong>${esc(c.authorName||'مستخدم')}</strong><p>${esc(c.text)}</p></div>`}).join('')},e=>toast('تعذر تحميل التعليقات: '+e.message));
+$('cs-'+id).onclick=async()=>{let input=$('ci-'+id),t=input.value.trim();if(!t)return;try{await comments.add({uid:me.uid,authorName:nameOf(),text:t,createdAt:firebase.firestore.FieldValue.serverTimestamp()});input.value=''}catch(e){toast('تعذر إرسال التعليق: '+e.message)}};return el}
+function listenRequests(){reqUnsub=db.collection('friendRequests').where('toUid','==',me.uid).where('status','==','pending').limit(30).onSnapshot(async s=>{let count=s.size;$('requestCount').textContent=count?count+' جديد':'';$('leftRequestCount').textContent=count?'('+count+')':'';if(!count){$('requestsList').innerHTML='<div class="empty">لا توجد طلبات جديدة</div>';return}let rows=await Promise.all(s.docs.map(async d=>{let r=d.data(),n='مستخدم حنكك';try{let u=await db.collection('users').doc(r.fromUid).get();if(u.exists)n=u.data().name||n}catch(_){}return `<div class="friendrow"><div class="avatar">${esc(initial(n))}</div><div class="details"><strong>${esc(n)}</strong><div class="muted">أرسل طلب صداقة</div></div><button class="primary" data-accept="${esc(d.id)}">قبول</button></div>`}));$('requestsList').innerHTML=rows.join('');$('requestsList').querySelectorAll('[data-accept]').forEach(b=>b.onclick=()=>acceptRequest(b.dataset.accept))},e=>toast('تعذر تحميل الطلبات: '+e.message))}
+async function acceptRequest(id){try{let ref=db.collection('friendRequests').doc(id),s=await ref.get();if(!s.exists)return;let r=s.data(),members=[me.uid,r.fromUid].sort();await db.collection('friendships').doc(members.join('__')).set({members,createdAt:firebase.firestore.FieldValue.serverTimestamp()});await ref.update({status:'accepted'});toast('تم قبول طلب الصداقة')}catch(e){toast('تعذر قبول الطلب: '+e.message)}}
+let searchTimer; $('userSearch').addEventListener('keydown',e=>{if(e.key==='Enter')searchUser()});
+async function searchUser(){let email=$('userSearch').value.trim().toLowerCase();if(!email)return toast('اكتب البريد الإلكتروني');try{let s=await db.collection('users').where('email','==',email).limit(5).get();if(s.empty)return toast('لم نجد حساباً بهذا البريد');let u=s.docs[0].data();if(u.uid===me.uid)return toast('هذا حسابك أنت');let id=me.uid+'_'+u.uid,ref=db.collection('friendRequests').doc(id),old=await ref.get();if(old.exists)return toast('سبق أن أرسلت طلباً لهذا المستخدم');await ref.set({fromUid:me.uid,toUid:u.uid,status:'pending',createdAt:firebase.firestore.FieldValue.serverTimestamp()});toast('تم إرسال طلب الصداقة 🤝')}catch(e){toast('تعذر البحث أو إرسال الطلب: '+e.message)}}
+$('userSearch').addEventListener('change',searchUser);
+</script>
+</body></html>
